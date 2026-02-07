@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partnership Form - Agriculture Department of India</title>
+  <link rel="stylesheet" href="/styles/header.css">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    /* Video Background */
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Form Container */
+    .form-container {
+      background: rgba(0, 0, 0, 0.8); /* Transparent black background */
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .form-container h1 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #00c853;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .form-container input, 
+    .form-container textarea, 
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-container textarea {
+      resize: none;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00c853;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #009624;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Video -->
+  <video class="video-bg" autoplay muted loop>
+    <source src="https://player.vimeo.com/external/6192775.hd.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Partnership Form -->
+  <div class="form-container">
+    <h1>Partnership Form</h1>
+    <form id="partnershipForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="organization">Organization Name:</label>
+      <input type="text" id="organization" name="organization" placeholder="Enter organization name" required>
+
+      <label for="partnershipType">Partnership Type:</label>
+      <select id="partnershipType" name="partnershipType" required>
+        <option value="" disabled selected>Select partnership type</option>
+        <option value="Research">Research Collaboration</option>
+        <option value="Funding">Funding</option>
+        <option value="Technology">Technology Support</option>
+        <option value="Awareness">Awareness Programs</option>
+      </select>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Add any additional details"></textarea>
+
+      <button type="button" onclick="handleSubmit()">Submit</button>
+    </form>
+
+    <footer>
+      &copy; 2025 Agriculture Department of India. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Form submission handler
+    function handleSubmit() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const organization = document.getElementById('organization').value.trim();
+    const partnershipType = document.getElementById('partnershipType').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const formMessage = document.getElementById("form-message");
+
+    // Clear previous messages
+    formMessage.textContent = "";
+    formMessage.style.color = "red";
+
+    // Validation: Check if required fields are filled
+    if (!name || !email || !phone || !organization || !partnershipType) {
+        formMessage.textContent = "Please fill out all required fields.";
+        return;
+    }
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+        formMessage.textContent = "Please enter a valid email address.";
+        return;
+    }
+
+    // Create partnership request object
+    const partnershipRequest = { name, email, phone, organization, partnershipType, message };
+
+    // Retrieve existing partnership requests from LocalStorage
+    let partnershipRequests = JSON.parse(localStorage.getItem("partnershipRequests")) || [];
+
+    // Add new request to the array
+    partnershipRequests.push(partnershipRequest);
+
+    // Store updated data back to LocalStorage
+    localStorage.setItem("partnershipRequests", JSON.stringify(partnershipRequests));
+
+    // Show success message
+    formMessage.textContent = "Thank you for submitting your partnership request. Our team will contact you shortly.";
+    formMessage.style.color = "green";
+
+    // Reset the form
+    document.getElementById("partnershipForm").reset();
+}
+
+  </script>
+</body>
+</html>

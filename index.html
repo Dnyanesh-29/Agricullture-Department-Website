@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Department of India</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e2e3dd;
+        }
+
+
+        .hero {
+            background-color: #B9C5AD;
+            /* Light hero section background */
+            color: #6D5C49;
+            /* Darker text */
+            text-align: center;
+            padding: 50px 50px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        #about {
+            background-color: rgba(38, 59, 40, 0.9);
+            /* Section background */
+            color: #e2e3dd;
+            border: 1px solid rgba(38, 59, 40, 255);
+            /* Border color */
+            margin: 20px auto;
+            max-width: 92%;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        #initiatives {
+            background-color: #E6E2D9;
+            /* Section background */
+            border: 1px solid #6D5C49;
+            /* Border color */
+            margin: 20px auto;
+            max-width: 92%;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+
+        .card {
+            background-color: #263b28;
+            border: 1px solid #6D5C49;
+            color: #e7e5d9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .news-container {
+            background-color: rgba(38, 59, 40, 0.9);
+            /* Muted background */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .news-section {
+            background-color: #e7e5d9;
+            /* News section background */
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .news-header h2 {
+            background-color: #263b28;
+            /* Header background */
+            color: #E6E2D9;
+            /* Text color */
+            padding: 10px;
+        }
+
+        .news-item {
+            background-color: #e7e5d9;
+            /* News item background */
+            border: 1px solid #6D5C49;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .news-title {
+            font-weight: bold;
+        }
+
+        .download-btn {
+            background-color: #263b28;
+            /* Button background */
+            color: #e7e5d9;
+            /* Button text */
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .download-btn:hover {
+            background-color: #978876;
+            /* Lighter hover */
+        }
+
+        /* Styling for scrollbar */
+        .news-list::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .news-list::-webkit-scrollbar-thumb {
+            background: #505c44;
+            border-radius: 6px;
+        }
+
+        .news-list::-webkit-scrollbar-thumb:hover {
+            background: #505c44;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .news-container {
+                flex-direction: column;
+            }
+
+            .news-section {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        .news-list {
+            max-height: 300px;
+            overflow-y: hidden;
+            /* Hide scrollbars */
+            position: relative;
+        }
+
+        .auto-scroll {
+            animation: scrollNews 25s linear infinite;
+            /* Automatically scroll the content */
+        }
+
+        .auto-scroll:hover {
+            animation-play-state: paused;
+            /* Pause the scrolling animation on hover */
+        }
+
+        @keyframes scrollNews {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        .news-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Agriculture Development of India</h1>
+        <p>Empowering Farmers, Sustaining Growth</p>
+    </header>
+    <nav>
+        <!-- <a href="index.html">Home</a> -->
+        <div class="dropdown">
+            <a href="#">About Us</a>
+            <div class="dropdown-content">
+                <a href="aboutUs/deptGlance.html">Department at a Glance</a>
+                <a href="aboutUs/history.html">History</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Schemes and Projects</a>
+            <div class="dropdown-content">
+                <a href="schemes/farmer-schemes.html">Farmer Welfare Schemes</a>
+                <a href="schemes/ministry-schemes.html">Ministry Major Schemes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Statistics</a>
+            <div class="dropdown-content">
+                <div class="sub-dropdown">
+                    <a>Agriculture</a>
+                    <div class="sub-dropdown-content">
+                        <a href="./statistics/Agricultural_Statistics.html">Agricultural Statistics at a Glance</a>
+                        <a href="./statistics/MSP.html">Minimum Support Price (MSP)</a>
+                        <a href="./statistics/Estimates.html">Estimates</a>
+                    </div>
+                </div>
+                <div class="sub-dropdown">
+                    <a>Horticulture</a>
+                    <div class="sub-dropdown-content">
+                        <a href="./statistics/horticulture_reports.html">Horticulture Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="policy.html">Policy Framework</a>
+        <a href="research.html">Research and Development</a>
+        <div class="dropdown">
+            <a href="#">Recruitments</a>
+            <div class="dropdown-content">
+                <a href="./recruitments/Recruitments.html">Recruitments</a>
+                <a href="./recruitments/internships.html">Internships</a>
+            </div>
+        </div>
+        <a href="success.html">Success Stories</a>
+        <a href="resources.html">Acts and Rules</a>
+        <div class="dropdown">
+            <a href="#">Contact Us</a>
+            <div class="dropdown-content">
+                <a href="./contactUs/partnership.html">Partnerships</a>
+                <a href="./contactUs/press.html">Press</a>
+                <a href="./contactUs/generalEnquiry.html">General Enquiry</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQs</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Transforming Indian Agriculture</h1>
+        <p>Innovating for a sustainable and prosperous future.</p>
+    </section>
+    <section id="about">
+        <h2>
+            <center>About Us</center>
+        </h2>
+        <p>The Agriculture Department of India serves as the cornerstone of the nation’s agrarian economy, entrusted
+            with the vital responsibility of ensuring food security, promoting rural development, and driving
+            agricultural growth. As the principal agency shaping agricultural policies, the department works to create a
+            robust and sustainable framework that empowers farmers and uplifts rural communities. With over half of the
+            Indian population relying on agriculture for their livelihood, our mission is to enhance productivity,
+            promote equitable resource distribution, and mitigate challenges such as climate change and market
+            fluctuations. Through policy interventions, we aim to transform agriculture into a modern,
+            technology-driven, and globally competitive sector, while preserving the heritage and diversity of India’s
+            farming traditions. The department also acts as a bridge, linking farmers to national and international
+            markets, research bodies, and technological advancements, fostering a dynamic ecosystem that propels rural
+            prosperity.</p>
+        <p>Innovation and sustainability lie at the heart of our initiatives. The department is committed to harnessing
+            cutting-edge technologies and scientific advancements to revolutionize Indian agriculture. From the
+            promotion of precision farming, drip irrigation, and climate-resilient crop varieties to the implementation
+            of sustainable practices like organic farming, our efforts are geared towards creating a balance between
+            productivity and environmental stewardship. Research and development play a pivotal role in our strategy,
+            with collaborations with leading agricultural universities and research institutions ensuring that farmers
+            benefit from the latest breakthroughs. Our digital transformation efforts, including platforms like e-NAM
+            (National Agriculture Market) and advanced mobile applications for weather forecasting and pest management,
+            provide farmers with real-time solutions and market connectivity, reducing inefficiencies and enhancing
+            their decision-making capabilities.</p>
+        <p>The Agriculture Department of India also places a strong emphasis on the socio-economic empowerment of
+            farmers, recognizing their invaluable contribution to nation-building. Through flagship programs like
+            PM-Kisan Samman Nidhi, soil health cards, and crop insurance schemes, we aim to alleviate financial burdens,
+            improve agricultural practices, and secure farmers’ livelihoods against uncertainties. Special focus is
+            given to marginalized communities and smallholder farmers, ensuring inclusivity and equitable access to
+            resources. By driving sustainable rural development and aiming for the ambitious goal of doubling farmers’
+            income, the department contributes significantly to the vision of Atmanirbhar Bharat (self-reliant India).
+            With an unwavering commitment to innovation, inclusivity, and sustainability, the Agriculture Department of
+            India continues to be a transformative force, fostering a future where agriculture thrives as a pillar of
+            national growth and global food security.</p>
+    </section>
+    <section id="initiatives">
+        <h1 style="color: #263b28;">
+            <center>Our Key Initiatives</center>
+        </h1>
+        <div class="cards">
+            <div class="card">
+                <img src="images/India_Farming.jpg" alt="Sustainable Farming">
+                <h3>Sustainable Farming</h3>
+                <p style="color: #E5DCD1;">Promoting eco-friendly practices to ensure long-term agricultural growth.</p>
+            </div>
+            <div class="card">
+                <img src="images/farmeredu.jpg" alt="Farmer Education">
+                <h3>Farmer Education</h3>
+                <p style="color: #E5DCD1;">Empowering farmers with knowledge and skills for modern farming techniques.
+                </p>
+            </div>
+            <div class="card">
+                <img src="images/smart_irr.jpg" alt="Irrigation Projects">
+                <h3>Irrigation Projects</h3>
+                <p style="color: #E5DCD1;">Ensuring water availability for crops through advanced irrigation systems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-container">
+        <div class="news-section">
+            <div class="news-header">
+                <h2>What’s New</h2>
+            </div>
+            <div class="news-list" id="newsList1">
+                <div class="news-item">
+                    <p class="news-title">Final Approved Guidelines for National Mission on Natural Farming</p>
+                    <a href="https://example.com/document1.pdf" class="download-btn">Download (976 KB)</a>
+                </div>
+                <div class="news-item">
+                    <p class="news-title">Minimum Support Price (MSP) of Toria for Rabi Marketing Season (RMS) 2025-26
+                    </p>
+                    <a href="https://example.com/document2.pdf" class="download-btn">Download (650 KB)</a>
+                </div>
+                <div class="news-item">
+                    <p class="news-title">Corrigendum: The National Farmers Welfare Program Implementation Society</p>
+                    <a href="https://example.com/document3.pdf" class="download-btn">Download (1.2 MB)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-section">
+            <div class="news-header">
+                <h2>Agriculture News</h2>
+            </div>
+            <div class="news-list" id="newsList2">
+                <div class="news-item">
+                    <p class="news-title">Department of Agriculture organized National Conference on Rabi Campaign 2024
+                    </p>
+                    <a href="https://example.com/agriculture-news.pdf" class="download-btn">Download (976 KB)</a>
+                </div>
+                <div class="news-item">
+                    <p class="news-title">New Policy Framework for Organic Farming Initiatives</p>
+                    <a href="https://example.com/organic-policy.pdf" class="download-btn">Download (850 KB)</a>
+                </div>
+                <div class="news-item">
+                    <p class="news-title">Modern Farming Techniques Workshop for Rural Farmers</p>
+                    <a href="https://example.com/workshop-details.pdf" class="download-btn">Download (1.5 MB)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <img src="images/image.png" alt="" srcset="" width="100%">
+    <script>
+        const autoScrollContainers = document.querySelectorAll(".news-list");
+
+        autoScrollContainers.forEach((container) => {
+            const scrollContent = container.innerHTML; // Duplicate the content for looping
+            const autoScrollDiv = document.createElement("div");
+            autoScrollDiv.classList.add("auto-scroll");
+            autoScrollDiv.innerHTML = scrollContent + scrollContent; // Duplicate content
+            container.innerHTML = ""; // Clear the container and append the auto-scroll div
+            container.appendChild(autoScrollDiv);
+        });
+
+
+    </script>
+    <div class="footer">
+        <div class="links"> <a href="#rti">RTI</a> <a href="#terms">Terms & Condition</a> <a href="#policies">Website
+                Policies</a> <a href="#help">Help</a> <a href="#feedback">Feedback</a> <a href="#manager">Web
+                Information Manager</a> <a href="#tenders">Tenders</a> <a href="#recruitments">Recruitments</a> <a
+                href="#contact">Contact Us</a> <a href="#sitemap">Sitemap</a> <BR> <BR>
+            <hr style="border: none; height: 2px; background-color: #e7e5d9;">
+        </div>
+        <div class="contact"> For more information about the MoAFW, please contact at: <a
+                href="mailto:us-it@gov.in">us-it[at]gov[dot]in</a> <BR> <BR>
+            <hr style="border: none; height: 2px; background-color: #e7e5d9;">
+        </div>
+        <div class="info"> Website Content Owned & Managed by Department of Agriculture & Farmers Welfare | MoA & FW |
+            Government of India, India<br> Designed and Developed by DAD/IT, Ministry of Agriculture, New Delhi,
+            India.<br> Last Updated On: 20 Jan 2025</div>
+</body>
+
+</html>

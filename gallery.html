@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/header.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            /* margin: 20px auto; */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        .slides img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+
+    /* margin: auto; */
+}
+
+.gallery img {
+    flex: 1 1 calc(20% - 15px); /* 20% width minus gap for 5 images per row */
+    max-width: calc(20% - 15px); /* Ensures 5 images per row */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+        
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .nav-button.left {
+            left: 10px;
+        }
+        .nav-button.right {
+            right: 10px;
+        }
+        .indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .indicator {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .indicator.active {
+            background-color: white;
+        }
+
+        /* navbar */
+        
+    </style>
+    <title>Gallery</title>
+</head>
+<body>
+<a href="index.html" id="header1">
+    <header>
+        <h1>Gallery</h1>
+        <p>Empowering Farmers, Sustaining Growth</p>
+    </header></a>
+    <nav>
+        <div class="dropdown">
+            <a href="#">About Us</a>
+            <div class="dropdown-content">
+                <a href="aboutUs/deptGlance.html">Department at a Glance</a>
+                <a href="aboutUs/history.html">History</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Schemes and Projects</a>
+            <div class="dropdown-content">
+                <a href="schemes/farmer-schemes.html">Farmer Welfare Schemes</a>
+                <a href="schemes/ministry-schemes.html">Ministry Major Schemes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Statistics</a>
+            <div class="dropdown-content">
+                <div class="sub-dropdown">
+                    <a>Agriculture</a>
+                    <div class="sub-dropdown-content">
+                        <a href="./statistics/Agricultural_Statistics.html">Agricultural Statistics at a Glance</a>
+                        <a href="./statistics/MSP.html">Minimum Support Price (MSP)</a>
+                        <a href="./statistics/Estimates.html">Estimates</a>
+                    </div>
+                </div>
+                <div class="sub-dropdown">
+                    <a>Horticulture</a>
+                    <div class="sub-dropdown-content">
+                        <a href="./statistics/horticulture_reports.html">Horticulture Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="policy.html">Policy Framework</a>
+        <a href="research.html">Research and Development</a>
+        <div class="dropdown">
+            <a href="#">Recruitments</a>
+            <div class="dropdown-content">
+                <a href="recruitments/Recruitments.html">Recruitments</a>
+                <a href="recruitments/internships.html">Internships</a>
+            </div>
+        </div>
+        <a href="success.html">Success Stories</a>
+        <a href="resources.html">Acts and Rules</a>
+        <div class="dropdown">
+            <a href="#">Contact Us</a>
+            <div class="dropdown-content">
+                <a href="./contactUs/partnership.html">Partnerships</a>
+                <a href="./contactUs/press.html">Press</a>
+                <a href="./contactUs/generalEnquiry.html">General Enquiry</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQs</a>
+    </nav>
+
+<div class="slider">
+    <div class="slides">
+        <img src="images/gallery_page/slider11.jpg" alt="Slide 1">
+        <img src="images/gallery_page/slider22.jpeg" alt="Slide 2">
+        <img src="images/gallery_page/slider33.jpg" alt="Slide 3">
+    </div>
+    <button class="nav-button left" onclick="prevSlide()">Prev</button>
+    <button class="nav-button right" onclick="nextSlide()">Next</button>
+    <div class="indicators">
+        <span class="indicator" onclick="goToSlide(0)"></span>
+        <span class="indicator" onclick="goToSlide(1)"></span>
+        <span class="indicator" onclick="goToSlide(2)"></span>
+    </div>
+</div>
+
+<div class="gallery">
+    <!-- <img src="images/gallery_page/gp1.jpg" alt="Gallery Image 1"> -->
+    <!-- <img src="images/gallery_page/gp2.jpg" alt="Gallery Image 2"> -->
+    <!-- <img src="images/gallery_page/gp3.jpg" alt="Gallery Image 3"> -->
+    <img src="images/gallery_page/gp4.jpg" alt="Gallery Image 4">
+    <img src="images/gallery_page/gp5.jpg" alt="Gallery Image 5">
+    <img src="images/gallery_page/gp6.jpg" alt="Gallery Image 6">
+    <img src="images/gallery_page/gp7.jpg" alt="Gallery Image 6">
+    <img src="images/gallery_page/gp8.jpg" alt="Gallery Image 6">
+    <img src="images/gallery_page/gp9.jpg" alt="Gallery Image 6">
+    <img src="images/gallery_page/gp10.jpg" alt="Gallery Image 6">
+    <img src="images/gallery_page/gp11.jpg" alt="Gallery Image 6">
+    <img src="images/gallery_page/gp12.jpg" alt="Gallery Image 6">
+    <img src="images/gallery_page/gp13.jpg" alt="Gallery Image 6">
+
+
+
+
+</div>
+
+
+
+<script>
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelector('.slides');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = document.querySelectorAll('.slides img').length;
+
+        currentSlide = index % totalSlides;
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function goToSlide(index) {
+        showSlide(index);
+    }
+
+    setInterval(nextSlide, 5000);
+</script>
+<div class="footer"> <div class="links"> <a href="#rti">RTI</a> <a href="#terms">Terms & Condition</a> <a href="#policies">Website Policies</a> <a href="#help">Help</a> <a href="#feedback">Feedback</a> <a href="#manager">Web Information Manager</a> <a href="#tenders">Tenders</a> <a href="#recruitments">Recruitments</a> <a href="#contact">Contact Us</a> <a href="#sitemap">Sitemap</a> <BR> <BR> <hr style="border: none; height: 2px; background-color: #e7e5d9;"> </div> <div class="contact"> For more information about the MoAFW, please contact at: <a href="mailto:us-it@gov.in">us-it[at]gov[dot]in</a>  <BR> <BR> <hr style="border: none; height: 2px; background-color: #e7e5d9;"></div> <div class="info"> Website Content Owned & Managed by Department of Agriculture & Farmers Welfare | MoA & FW | Government of India, India<br> Designed and Developed by DAD/IT, Ministry of Agriculture, New Delhi, India.<br> Last Updated On: 20 Jan 2025</div>
+</body>
+</html>

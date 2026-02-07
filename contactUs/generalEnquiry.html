@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Enquiry Form - Agriculture Department of India</title>
+  <link rel="stylesheet" href="/styles/header.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      /* background: url('https://images.pexels.com/photos/2334207/pexels-photo-2334207.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center fixed; */
+      background-size: cover;
+      background-color: #e0f0e1;
+      color: #333;
+    }
+
+    /* Form Container */
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background: #2e7d32;
+      color: white;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #1b5e20;
+    }
+
+    .success {
+      color: green;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>General Enquiry Form</h1>
+    <div id="form-message" class="success"></div>
+    <form id="enquiryForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Enter the subject of your enquiry" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Enter your message or enquiry" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript for client-side form validation and storing data
+    document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Collect form data
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const formMessage = document.getElementById("form-message");
+
+    // Clear previous messages
+    formMessage.textContent = "";
+    formMessage.style.color = "red";
+
+    // Simple validation
+    if (!name || !email || !phone || !subject || !message) {
+        formMessage.textContent = "Please fill out all fields.";
+        return;
+    }
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+        formMessage.textContent = "Please enter a valid email address.";
+        return;
+    }
+
+    // Phone validation (allowing 10-digit numbers)
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+        formMessage.textContent = "Please enter a valid 10-digit phone number.";
+        return;
+    }
+
+    // Create enquiry object
+    const enquiry = { name, email, phone, subject, message };
+
+    // Retrieve existing data from LocalStorage
+    let enquiries = JSON.parse(localStorage.getItem("enquiries")) || [];
+
+    // Add new enquiry to the array
+    enquiries.push(enquiry);
+
+    // Store updated data back to LocalStorage
+    localStorage.setItem("enquiries", JSON.stringify(enquiries));
+
+    // Show success message
+    formMessage.textContent = "Your enquiry has been submitted successfully!";
+
+    formMessage.style.color = "black";
+
+    // Reset the form
+    document.getElementById("enquiryForm").reset();
+});
+
+
+  </script>
+</body>
+</html>

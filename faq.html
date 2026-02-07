@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Agriculture Development of India</title>
+    <link rel="stylesheet" href="styles/header.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .faq {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .faq h3 {
+            margin: 0;
+            cursor: pointer;
+            position: relative;
+        }
+        .faq h3::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            font-size: 1.5rem;
+        }
+        .faq h3.active::after {
+            content: '-';
+        }
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #228B22;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const faqs = document.querySelectorAll(".faq h3");
+
+            faqs.forEach(faq => {
+                faq.addEventListener("click", () => {
+                    faq.classList.toggle("active");
+                    const content = faq.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <a href="index.html" id="header1">
+    <header>
+        <h1>Frequently Asked Questions</h1>
+        <p>Your questions answered about agriculture development</p>
+    </header></a>
+    <nav>
+        <div class="dropdown">
+            <a href="#">About Us</a>
+            <div class="dropdown-content">
+                <a href="aboutUs/deptGlance.html">Department at a Glance</a>
+                <a href="aboutUs/history.html">History</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Schemes and Projects</a>
+            <div class="dropdown-content">
+                <a href="schemes/farmer-schemes.html">Farmer Welfare Schemes</a>
+                <a href="schemes/ministry-schemes.html">Ministry Major Schemes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Statistics</a>
+            <div class="dropdown-content">
+                <div class="sub-dropdown">
+                    <a >Agriculture</a>
+                    <div class="sub-dropdown-content">
+                        <a href="./statistics/Agricultural_Statistics.html">Agricultural Statistics at a Glance</a>
+                        <a href="./statistics/MSP.html">Minimum Support Price (MSP)</a>
+                        <a href="./statistics/Estimates.html">Estimates</a>
+                    </div>
+                </div>
+                <div class="sub-dropdown">
+                    <a>Horticulture</a>
+                    <div class="sub-dropdown-content">
+                        <a href="./statistics/horticulture_reports.html">Horticulture Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="policy.html">Policy Framework</a>
+        <a href="research.html">Research and Development</a>
+        <div class="dropdown">
+            <a href="#">Recruitments</a>
+            <div class="dropdown-content">
+                <a href="recruitments/Recruitments.html">Recruitments</a>
+                <a href="recruitments/internships.html">Internships</a>
+            </div>
+        </div>
+        <a href="success.html">Success Stories</a>
+        <a href="resources.html">Acts and Rules</a>
+        <div class="dropdown">
+            <a href="#">Contact Us</a>
+            <div class="dropdown-content">
+                <a href="./contactUs/partnership.html">Partnerships</a>
+                <a href="./contactUs/press.html">Press</a>
+                <a href="./contactUs/generalEnquiry.html">General Enquiry</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQs</a>
+    </nav>
+
+    <section class="content">
+        <div class="faq">
+            <h3>What is the mission of Agriculture Development of India?</h3>
+            <div class="faq-content">
+                <p>Our mission is to modernize the agricultural sector in India by promoting sustainable practices, technological advancements, and providing support to farmers.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>How can farmers access government schemes?</h3>
+            <div class="faq-content">
+                <p>Farmers can access government schemes through the official agriculture portal or visit their nearest agriculture department office for assistance.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>What training programs are available for farmers?</h3>
+            <div class="faq-content">
+                <p>We offer training programs in organic farming, modern irrigation techniques, crop diversification, and the use of modern machinery to enhance productivity.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>How can youth contribute to agriculture development?</h3>
+            <div class="faq-content">
+                <p>Youth can contribute by adopting innovative farming techniques, engaging in agri-entrepreneurship, and utilizing technology like drones and AI for farming efficiency.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>Where can I find updates on new initiatives?</h3>
+            <div class="faq-content">
+                <p>Updates on new initiatives are regularly posted on our website and social media channels. Stay connected for the latest information.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>What financial support is available for small farmers?</h3>
+            <div class="faq-content">
+                <p>Small farmers can access various government subsidies, low-interest loans, and grants to support their farming needs. Visit the nearest agriculture office for more details.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>Are there any programs for organic farming?</h3>
+            <div class="faq-content">
+                <p>Yes, we promote organic farming through dedicated programs that provide training, certification support, and access to organic markets.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>How can farmers sell their produce directly to consumers?</h3>
+            <div class="faq-content">
+                <p>Farmers can leverage government-run farmer markets, online platforms, and cooperative models to sell their produce directly to consumers, reducing dependency on intermediaries.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>What is being done to combat climate change in agriculture?</h3>
+            <div class="faq-content">
+                <p>We are promoting climate-resilient crops, sustainable farming practices, and water conservation techniques to help farmers adapt to changing climatic conditions.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <h3>How can I volunteer or contribute to agricultural initiatives?</h3>
+            <div class="faq-content">
+                <p>Individuals can contribute by participating in awareness campaigns, providing technical expertise, or supporting local farming communities through NGOs and volunteer programs.</p>
+            </div>
+        </div>
+    </section>
+    <div class="footer"> <div class="links"> <a href="#rti">RTI</a> <a href="#terms">Terms & Condition</a> <a href="#policies">Website Policies</a> <a href="#help">Help</a> <a href="#feedback">Feedback</a> <a href="#manager">Web Information Manager</a> <a href="#tenders">Tenders</a> <a href="#recruitments">Recruitments</a> <a href="#contact">Contact Us</a> <a href="#sitemap">Sitemap</a> <BR> <BR> <hr style="border: none; height: 2px; background-color: #e7e5d9;"> </div> <div class="contact"> For more information about the MoAFW, please contact at: <a href="mailto:us-it@gov.in">us-it[at]gov[dot]in</a>  <BR> <BR> <hr style="border: none; height: 2px; background-color: #e7e5d9;"></div> <div class="info"> Website Content Owned & Managed by Department of Agriculture & Farmers Welfare | MoA & FW | Government of India, India<br> Designed and Developed by DAD/IT, Ministry of Agriculture, New Delhi, India.<br> Last Updated On: 20 Jan 2025</div>
+
+</body>
+</html>
